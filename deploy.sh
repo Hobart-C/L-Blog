@@ -22,7 +22,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-exec /bin/bash
 
 # 如果发布到 https://<USERNAME>.github.io
 
@@ -30,5 +29,6 @@ exec /bin/bash
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:Hobart-C/L-Blog.git docs
+exec /bin/bash
 
 cd -
