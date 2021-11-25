@@ -5,7 +5,7 @@ module.exports = {
       { rel: 'icon', href: 'images/hero.png' }
     ]
   ],
-  base: '/L-BLOG/',
+  base: '/L-Blog/',
   title: 'L-BLOG',
   description: '个人技术博客'
 }
