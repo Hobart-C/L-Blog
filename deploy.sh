@@ -7,7 +7,6 @@ git commit -m 'push'
 # exec /bin/bash
 
 git push -f git@github.com:Hobart-C/L-Blog.git master
-# exec /bin/bash
 
 
 # 生成静态文件
@@ -23,6 +22,7 @@ git init
 git add -A
 git commit -m 'deploy'
 
+exec /bin/bash
 
 # 如果发布到 https://<USERNAME>.github.io
 
