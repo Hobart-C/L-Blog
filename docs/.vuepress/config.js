@@ -9,10 +9,20 @@ module.exports = {
     nav: [
       // 导航栏配置
       { text: '首页', link: '/' },
-      { text: '基础学习', link: '' },
-      { text: '进阶之路', link: '' }
+      { text: '笔记', link: '/note/' },
+      { text: '进阶之路', link: '/more/' }
     ],
-    sidebar: 'auto' // 侧边栏配置
+    sidebar: {
+      '/note/': [
+        {
+          title: '笔记',
+          path: '/note/',
+          collapsable: false,
+          // sidebarDepth:0,
+          children: ['简单使用ThreeJS']
+        }
+      ]
+    } // 侧边栏配置
   },
   base: '/L-Blog/',
   title: 'L-BLOG',

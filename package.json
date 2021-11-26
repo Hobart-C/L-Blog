@@ -4,7 +4,7 @@
   "description": "个人技术博客 记录一下前端路上的学习经历和知识点",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "serve": "vuepress dev docs",
     "build": "vuepress build docs",
     "deploy": "deploy.sh"
   },
