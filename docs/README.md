@@ -1,16 +1,16 @@
 ---
 home: true
-heroImage: images/hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
+heroImage: images/hero.jpg
+heroText: Hobart的博客
+tagline: 记录前端学习的历程
+actionText: Let's get it !
 actionLink: /zh/guide/
 features:
-  - title: 简洁至上
-    details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-  - title: Vue驱动
-    details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-  - title: 高性能
-    details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
+  - title: Vue路上的坑
+    details: 总结一下Vue和一些基于Vue的UI库带来的坑。
+  - title: 进阶学习
+    details: 工程化 以及 Vue+ThreeJS(简单应用)。
+  - title: 高性能与安全
+    details: 做一点高大上的东西吧。
+footer: MIT Licensed | Copyright © 2021-present Hobart-C
 ---
