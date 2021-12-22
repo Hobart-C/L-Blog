@@ -18,8 +18,8 @@ module.exports = {
           title: '笔记',
           path: '/note/',
           collapsable: false,
-          // sidebarDepth:0,
-          children: ['简单使用ThreeJS']
+          sidebarDepth: 3,
+          children: ['简单使用ThreeJS', '谈谈Babel', '谈谈Webpack']
         }
       ]
     } // 侧边栏配置
