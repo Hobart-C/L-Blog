@@ -113,8 +113,9 @@ var p = new Promise(function (resolve, reject) {
 ::: warning
 垫片(Polyfill)这一块内容，我们不仅要知道如何配置，还要知道这些配置的区别和原因，我查资料的时候也是感觉非常的绕
 
-**先给出两种使用的方案**。
+**先给出两种使用的方案**
 :::
+**其中 npm install 是装在-S 还是-D 有严格区分，执行时机不同，需要注意**
 
 **业务项目中：**
 
@@ -387,8 +388,13 @@ exports.default = _default
 ## 总结
 
 babel 是 webpack 必不可缺的一部分，是十分重要的一部分，它的配置和原理还是需要深入了解的，日后有时间，整理一波解析--转换--生成。
+
 本文参考：
+
 [Babel 官方文档](https://www.babeljs.cn/docs/)
+
 [不容错过的 Babel7 知识](https://juejin.cn/post/6844904008679686152#heading-1)
+
 [Babel 7: @babel/preset-env & plugin-transform-runtime 小知识](https://juejin.cn/post/6984020141746946084#heading-4)
+
 [吃一堑长一智系列: 99% 开发者没弄明白的 babel 知识](https://zhuanlan.zhihu.com/p/361874935)
