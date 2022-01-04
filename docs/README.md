@@ -4,7 +4,7 @@ heroImage: images/hero.jpg
 heroText: Hobart的博客
 tagline: 记录前端学习的历程
 actionText: Let's get it !
-actionLink: /note/
+actionLink: /more/
 features:
   - title: Vue路上的坑
     details: 总结一下Vue和一些基于Vue的UI库带来的坑。

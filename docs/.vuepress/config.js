@@ -19,7 +19,16 @@ module.exports = {
           path: '/note/',
           collapsable: false,
           sidebarDepth: 3,
-          children: ['简单使用ThreeJS', '谈谈Babel', '谈谈Webpack']
+          children: ['简单使用ThreeJS']
+        }
+      ],
+      '/more/': [
+        {
+          title: '进阶之路',
+          path: '/more/',
+          collapsable: false,
+          sidebarDepth: 3,
+          children: ['package.json的小知识', '谈谈Babel', '谈谈Webpack']
         }
       ]
     } // 侧边栏配置
