@@ -19,7 +19,7 @@ module.exports = {
           path: '/note/',
           collapsable: false,
           sidebarDepth: 3,
-          children: ['简单使用ThreeJS']
+          children: ['简单使用ThreeJS', '从原型到原型链', '讲清楚this']
         }
       ],
       '/more/': [
