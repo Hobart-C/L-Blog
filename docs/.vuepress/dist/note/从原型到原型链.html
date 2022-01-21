@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>从原型到原型链 | L-BLOG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="images/hero.jpg">
+    <meta name="description" content="个人技术博客">
+    
+    <link rel="preload" href="/L-Blog/assets/css/0.styles.a8acbe12.css" as="style"><link rel="preload" href="/L-Blog/assets/js/app.97274e25.js" as="script"><link rel="preload" href="/L-Blog/assets/js/2.bcdb885c.js" as="script"><link rel="preload" href="/L-Blog/assets/js/4.75ce4c61.js" as="script"><link rel="prefetch" href="/L-Blog/assets/js/10.3433df1a.js"><link rel="prefetch" href="/L-Blog/assets/js/11.96680d3a.js"><link rel="prefetch" href="/L-Blog/assets/js/12.aa491ce9.js"><link rel="prefetch" href="/L-Blog/assets/js/13.c5309249.js"><link rel="prefetch" href="/L-Blog/assets/js/14.1186a2e4.js"><link rel="prefetch" href="/L-Blog/assets/js/15.92e5e70c.js"><link rel="prefetch" href="/L-Blog/assets/js/3.9194b101.js"><link rel="prefetch" href="/L-Blog/assets/js/5.fe8c1065.js"><link rel="prefetch" href="/L-Blog/assets/js/6.930bdf5e.js"><link rel="prefetch" href="/L-Blog/assets/js/7.9d972527.js"><link rel="prefetch" href="/L-Blog/assets/js/8.26a95e59.js"><link rel="prefetch" href="/L-Blog/assets/js/9.23f34cf2.js">
+    <link rel="stylesheet" href="/L-Blog/assets/css/0.styles.a8acbe12.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/L-Blog/" class="home-link router-link-active"><!----> <span class="site-name">L-BLOG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/L-Blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/L-Blog/note/" class="nav-link router-link-active">
+  笔记
+</a></div><div class="nav-item"><a href="/L-Blog/more/" class="nav-link">
+  进阶之路
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/L-Blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/L-Blog/note/" class="nav-link router-link-active">
+  笔记
+</a></div><div class="nav-item"><a href="/L-Blog/more/" class="nav-link">
+  进阶之路
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/L-Blog/note/" class="sidebar-heading clickable router-link-active open"><span>笔记</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/L-Blog/note/简单使用ThreeJS.html" class="sidebar-link">简单使用 ThreeJS</a></li><li><a href="/L-Blog/note/从原型到原型链.html" class="active sidebar-link">从原型到原型链</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#就是一个简单的笔记罢了" class="sidebar-link">就是一个简单的笔记罢了</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#prototype" class="sidebar-link">prototype</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#proto" class="sidebar-link">_proto_</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#constructor" class="sidebar-link">constructor</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#实例与原型" class="sidebar-link">实例与原型</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#原型的原型" class="sidebar-link">原型的原型</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#原型链" class="sidebar-link">原型链</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#补充" class="sidebar-link">补充</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#proto-2" class="sidebar-link">proto</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/从原型到原型链.html#真的是继承吗" class="sidebar-link">真的是继承吗？</a></li></ul></li></ul></li><li><a href="/L-Blog/note/讲清楚this.html" class="sidebar-link">讲清楚 this</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="从原型到原型链"><a href="#从原型到原型链" class="header-anchor">#</a> 从原型到原型链</h1> <h2 id="就是一个简单的笔记罢了"><a href="#就是一个简单的笔记罢了" class="header-anchor">#</a> 就是一个简单的笔记罢了</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 构造函数</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+person<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Kevin'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// Kevin</span>
+</code></pre></div><p>以上，用<code>构造函数Person</code> new 了一个实例 <code>person</code></p> <h2 id="prototype"><a href="#prototype" class="header-anchor">#</a> <strong>prototype</strong></h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 构造函数</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 虽然写在注释里，但是你要注意：</span>
+<span class="token comment">// prototype是函数才会有的属性</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Kevin'</span>
+<span class="token keyword">var</span> person1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> person2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person1<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// Kevin</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person2<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// Kevin</span>
+</code></pre></div><p>从上面可以看出，在构造函数 <code>Person</code> 的 <code>prototype</code> 上定义属性，则实例化出来的 person1，person2 都会继承这个属性</p> <p>所以 <strong><code>Person.prototype</code></strong> 是<strong>所有通过构造函数 Person 实例化的对象的原型</strong></p> <img src="/L-Blog/assets/img/prototype.6ed311e0.png"> <h2 id="proto"><a href="#proto" class="header-anchor">#</a> <strong><em>proto</em></strong></h2> <p>这是每一个 JavaScript 对象(除了 null )都具有的一个属性，叫<strong>proto</strong>，这个属性会指向该对象的原型</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 构造函数</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre></div><img src="/L-Blog/assets/img/proto.88e97b5c.png"> <h2 id="constructor"><a href="#constructor" class="header-anchor">#</a> <strong>constructor</strong></h2> <p>原型的 <code>constructor</code> 可以指向构造函数</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 构造函数</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Person <span class="token operator">===</span> <span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre></div><img src="/L-Blog/assets/img/constructor.5fa1915a.png"> <p><strong>补充</strong></p> <p>看下面这个例子</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 构造函数</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Person<span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre></div><p>其实 person 中并没有 constructor 属性,当不能读取到 constructor 属性时，会从 person 的原型也就是 Person.prototype 中读取，正好原型中有该属性，所以：</p> <div class="language-js extra-class"><pre class="language-js"><code>person<span class="token punctuation">.</span>constructor <span class="token operator">===</span> <span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor
+<span class="token comment">// 而</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Person
+</code></pre></div><p><strong>综上，我们可以得到以下：</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 构造函数</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>__proto__ <span class="token operator">==</span> <span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">==</span> Person<span class="token punctuation">)</span> <span class="token comment">// true</span>
+<span class="token comment">// 顺便学习一个ES5的方法,可以获得对象的原型</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre></div><h2 id="实例与原型"><a href="#实例与原型" class="header-anchor">#</a> 实例与原型</h2> <p>当读取实例的属性时，如果找不到，就会查找与对象关联的原型中的属性，如果还查不到，就去找原型的原型，一直找到最顶层为止。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 构造函数</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Kevin'</span>
+
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+person<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Daisy'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// Daisy</span>
+
+<span class="token keyword">delete</span> person<span class="token punctuation">.</span>name
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// Kevin</span>
+</code></pre></div><p>在这里找到了原型上面有 name 这个属性，但如果没有呢？</p> <h2 id="原型的原型"><a href="#原型的原型" class="header-anchor">#</a> 原型的原型</h2> <p>原型也是一个对象，既然是对象，我们就可以用最原始的方式创建它，那就是：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Kevin'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// Kevin</span>
+</code></pre></div><p>原型对象就是通过 Object 构造函数生成的
+<img src="/L-Blog/assets/img/Object.33e81924.png"></p> <h2 id="原型链"><a href="#原型链" class="header-anchor">#</a> 原型链</h2> <p>那 Object.prototype 的原型呢？ <strong>null</strong></p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre></div><p>null 究竟代表了什么呢？
+引用阮一峰老师的 <a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html" target="_blank" rel="noopener noreferrer">《undefined 与 null 的区别》<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 就是：</p> <blockquote><p>null 表示“没有对象”，即该处不应该有值。</p></blockquote> <p>所以 Object.prototype.<strong>proto</strong> 的值为 null 跟 Object.prototype 没有原型，其实表达了一个意思。
+所以查找属性的时候查到 Object.prototype 就可以停止查找了。（就是在告诉你，此处禁止套娃）</p> <img src="/L-Blog/assets/img/原型链.0eda1a47.png"> <p>图中由相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。</p> <h2 id="补充"><a href="#补充" class="header-anchor">#</a> 补充</h2> <h3 id="proto-2"><a href="#proto-2" class="header-anchor">#</a> <em>proto</em></h3> <p>绝大部分浏览器都支持这个非标准的方法访问原型，然而它并不存在于 Person.prototype 中，实际上，它是来自于 Object.prototype ，与其说是一个属性，不如说是一个 getter/setter，当使用 <code>obj._proto_</code> 时，可以理解成返回了 <code>Object.getPrototypeOf(obj)</code>。</p> <h3 id="真的是继承吗"><a href="#真的是继承吗" class="header-anchor">#</a> 真的是继承吗？</h3> <p>最后是关于继承，前面说到 <code>每一个对象都会从原型‘继承’属性</code>，实际上，<code>继承</code>是一个十分具有迷惑性的说法，引用《你不知道的 JavaScript》中的话，就是：</p> <blockquote><p>继承意味着复制操作，然而 JavaScript 默认并不会复制对象的属性，相反，JavaScript 只是在两个对象之间创建一个关联，这样，一个对象就可以通过委托访问另一个对象的属性和函数，所以与其叫继承，委托的说法反而更准确些。</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/L-Blog/note/简单使用ThreeJS.html" class="prev">
+        简单使用 ThreeJS
+      </a></span> <span class="next"><a href="/L-Blog/note/讲清楚this.html">
+        讲清楚 this
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/L-Blog/assets/js/app.97274e25.js" defer></script><script src="/L-Blog/assets/js/2.bcdb885c.js" defer></script><script src="/L-Blog/assets/js/4.75ce4c61.js" defer></script>
+  </body>
+</html>

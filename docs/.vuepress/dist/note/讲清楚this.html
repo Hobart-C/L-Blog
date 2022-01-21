@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>讲清楚 this | L-BLOG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="images/hero.jpg">
+    <meta name="description" content="个人技术博客">
+    
+    <link rel="preload" href="/L-Blog/assets/css/0.styles.a8acbe12.css" as="style"><link rel="preload" href="/L-Blog/assets/js/app.97274e25.js" as="script"><link rel="preload" href="/L-Blog/assets/js/2.bcdb885c.js" as="script"><link rel="preload" href="/L-Blog/assets/js/15.92e5e70c.js" as="script"><link rel="prefetch" href="/L-Blog/assets/js/10.3433df1a.js"><link rel="prefetch" href="/L-Blog/assets/js/11.96680d3a.js"><link rel="prefetch" href="/L-Blog/assets/js/12.aa491ce9.js"><link rel="prefetch" href="/L-Blog/assets/js/13.c5309249.js"><link rel="prefetch" href="/L-Blog/assets/js/14.1186a2e4.js"><link rel="prefetch" href="/L-Blog/assets/js/3.9194b101.js"><link rel="prefetch" href="/L-Blog/assets/js/4.75ce4c61.js"><link rel="prefetch" href="/L-Blog/assets/js/5.fe8c1065.js"><link rel="prefetch" href="/L-Blog/assets/js/6.930bdf5e.js"><link rel="prefetch" href="/L-Blog/assets/js/7.9d972527.js"><link rel="prefetch" href="/L-Blog/assets/js/8.26a95e59.js"><link rel="prefetch" href="/L-Blog/assets/js/9.23f34cf2.js">
+    <link rel="stylesheet" href="/L-Blog/assets/css/0.styles.a8acbe12.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/L-Blog/" class="home-link router-link-active"><!----> <span class="site-name">L-BLOG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/L-Blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/L-Blog/note/" class="nav-link router-link-active">
+  笔记
+</a></div><div class="nav-item"><a href="/L-Blog/more/" class="nav-link">
+  进阶之路
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/L-Blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/L-Blog/note/" class="nav-link router-link-active">
+  笔记
+</a></div><div class="nav-item"><a href="/L-Blog/more/" class="nav-link">
+  进阶之路
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/L-Blog/note/" class="sidebar-heading clickable router-link-active open"><span>笔记</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/L-Blog/note/简单使用ThreeJS.html" class="sidebar-link">简单使用 ThreeJS</a></li><li><a href="/L-Blog/note/从原型到原型链.html" class="sidebar-link">从原型到原型链</a></li><li><a href="/L-Blog/note/讲清楚this.html" class="active sidebar-link">讲清楚 this</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/L-Blog/note/讲清楚this.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/讲清楚this.html#正文" class="sidebar-link">正文</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/L-Blog/note/讲清楚this.html#什么是-this" class="sidebar-link">什么是 this</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/讲清楚this.html#直接调用" class="sidebar-link">直接调用</a></li><li class="sidebar-sub-header"><a href="/L-Blog/note/讲清楚this.html#作为对象的方法" class="sidebar-link">作为对象的方法</a></li></ul></li><li class="sidebar-sub-header"><a href="/L-Blog/note/讲清楚this.html#待续" class="sidebar-link">待续......</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="讲清楚-this"><a href="#讲清楚-this" class="header-anchor">#</a> 讲清楚 this</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>我个人感觉，this 乱是因为 js 语法标准的不断更新以及 js 本身的灵活性，有利有弊。所以 this 的指向等问题还是必须要弄清楚的，不然 bug 都不会改了，还会写出一堆 bug</p> <h2 id="正文"><a href="#正文" class="header-anchor">#</a> 正文</h2> <p>JavaScript 的 <code>this</code> 是在<strong>调用阶段</strong>进行绑定的</p> <h3 id="什么是-this"><a href="#什么是-this" class="header-anchor">#</a> 什么是 this</h3> <p>首先对 this 的下个定义：<strong>this 是在执行上下文创建时确定的一个在执行过程中不可更改的变量</strong></p> <p>所谓<strong>执行上下文</strong>，就是 JavaScript 引擎在执行一段代码之前将代码内部会用到的一些<strong>变量</strong>、<strong>函数</strong>、<strong>this</strong>提前声明然后保存在变量对象中的过程。这个'代码片段'包括：<strong>全局代码</strong>(script 标签内部的代码)、<strong>函数内部代码</strong>、<strong>eval 内部代码</strong>。而我们所熟知的作用域链也会在保存在这里，以一个类数组的形式存储在对应函数的[[Scopes]]属性中。</p> <p>因为是在<strong>执行上下文</strong>确定 this，所以就产生了多变性，即：<strong>当函数在不同的调用方式下都可能会导致 this 的值不同。</strong>、</p> <p>先简单区分以下<strong>严格模式</strong>和<strong>非严格模式</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 严格模式</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token string">'use strict'</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a
+<span class="token punctuation">}</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//报错 Cannot read property 'a' of undefined</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 非严格模式</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a
+<span class="token punctuation">}</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+</code></pre></div><p>在看一个关于 obj 的例子：</p> <p>结论：<strong>当函数独立调用的时候，在严格模式下它的 this 指向 undefined，在非严格模式下，当 this 指向 undefined 的时候，自动指向全局对象(浏览器中就是 window)</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1000</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  b<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    c<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">+</span> <span class="token number">2</span> <span class="token comment">//严格模式下这块报错 Cannot read property 'a' of undefined</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> obj<span class="token punctuation">.</span>c
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//1002</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>b<span class="token punctuation">)</span> <span class="token comment">//1001</span>
+</code></pre></div><p>结论：<strong>当 obj 在全局声明的时候，obj 内部属性中的 this 指向全局对象，当 obj 在一个函数中声明的时候，严格模式下 this 会指向 undefined，非严格模式自动转为指向全局对象。</strong></p> <h3 id="直接调用"><a href="#直接调用" class="header-anchor">#</a> 直接调用</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">b</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+obj<span class="token punctuation">.</span><span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+</code></pre></div><p>这里乍一看，看似是 obj 调用方法，但实际上最终打印的是 fun(),所以是独立调用函数
+结论：<strong>当函数独立调用的时候，在严格模式下它的 this 指向 undefined，在非严格模式下，当 this 指向 undefined 的时候，自动指向全局对象(浏览器中就是 window)。</strong></p> <h3 id="作为对象的方法"><a href="#作为对象的方法" class="header-anchor">#</a> 作为对象的方法</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">b</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//2</span>
+</code></pre></div><p>这里最终调用的地方是 obj 所以 this 指向 obj 打印的是 obj 下面的 a</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">b</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> t <span class="token operator">=</span> obj<span class="token punctuation">.</span>b
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+</code></pre></div><p>这里用 t 存储了 obj.b 这个函数（存的 b 函数的指针，所以之后就和 obj 没有关系了）但这里执行时时单独调用了 b 函数 所以 this 指向了 window</p> <h2 id="待续"><a href="#待续" class="header-anchor">#</a> 待续......</h2></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/L-Blog/note/从原型到原型链.html" class="prev">
+        从原型到原型链
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/L-Blog/assets/js/app.97274e25.js" defer></script><script src="/L-Blog/assets/js/2.bcdb885c.js" defer></script><script src="/L-Blog/assets/js/15.92e5e70c.js" defer></script>
+  </body>
+</html>
