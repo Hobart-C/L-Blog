@@ -17,7 +17,7 @@
 
 ## ThreeJS
 
-官方就是这么简单的一个介绍。
+官方就是这么简单的一个介绍
 
 > "Javascript 3D library"
 
