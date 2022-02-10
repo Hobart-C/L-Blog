@@ -6,11 +6,11 @@ tagline: 记录前端学习的历程
 actionText: Let's get it !
 actionLink: /more/
 features:
-  - title: Vue路上的坑
-    details: 总结一下Vue和一些基于Vue的UI库带来的坑。
+  - title: 繁杂的js小知识点
+    details: 包括不同ES版本、框架之类的东西
   - title: 进阶学习
-    details: 工程化 以及 Vue+ThreeJS(简单应用)。
+    details: 工程化。
   - title: 高性能与安全
-    details: 做一点高大上的东西吧。
+    details: 做一点高大上的东西吧，虽然还要些时间。
 footer: MIT Licensed | Copyright © 2021-present Hobart-C
 ---
