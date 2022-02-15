@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Webpack 代码分割 和 路由懒加载、组件懒加载 | L-BLOG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="images/hero.jpg">
+    <meta name="description" content="个人技术博客">
+    
+    <link rel="preload" href="/L-Blog/assets/css/0.styles.776a7461.css" as="style"><link rel="preload" href="/L-Blog/assets/js/app.72121cfb.js" as="script"><link rel="preload" href="/L-Blog/assets/js/2.b76b99cb.js" as="script"><link rel="preload" href="/L-Blog/assets/js/8.1508f220.js" as="script"><link rel="prefetch" href="/L-Blog/assets/js/10.dc70b2c6.js"><link rel="prefetch" href="/L-Blog/assets/js/11.e7278029.js"><link rel="prefetch" href="/L-Blog/assets/js/12.472f86a4.js"><link rel="prefetch" href="/L-Blog/assets/js/13.11d677e4.js"><link rel="prefetch" href="/L-Blog/assets/js/14.3d8d2ba1.js"><link rel="prefetch" href="/L-Blog/assets/js/15.ac385718.js"><link rel="prefetch" href="/L-Blog/assets/js/16.c981ecad.js"><link rel="prefetch" href="/L-Blog/assets/js/3.d79a700d.js"><link rel="prefetch" href="/L-Blog/assets/js/4.a806cb81.js"><link rel="prefetch" href="/L-Blog/assets/js/5.ca0fa763.js"><link rel="prefetch" href="/L-Blog/assets/js/6.4df5bace.js"><link rel="prefetch" href="/L-Blog/assets/js/7.126660f3.js"><link rel="prefetch" href="/L-Blog/assets/js/9.e80f5ace.js">
+    <link rel="stylesheet" href="/L-Blog/assets/css/0.styles.776a7461.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/L-Blog/" class="home-link router-link-active"><!----> <span class="site-name">L-BLOG</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/L-Blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/L-Blog/note/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/L-Blog/more/" class="nav-link router-link-active">
+  进阶之路
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/L-Blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/L-Blog/note/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/L-Blog/more/" class="nav-link router-link-active">
+  进阶之路
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/L-Blog/more/" class="sidebar-heading clickable router-link-active open"><span>进阶之路</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/L-Blog/more/package.json的小知识.html" class="sidebar-link">package.json 的小知识</a></li><li><a href="/L-Blog/more/谈谈Babel.html" class="sidebar-link">谈谈 Babel</a></li><li><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html" class="active sidebar-link">Webpack 代码分割 和 路由懒加载、组件懒加载</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#代码分割的三种方式" class="sidebar-link">代码分割的三种方式</a></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#splitchunks-代码拆分" class="sidebar-link">splitChunks 代码拆分</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#默认配置" class="sidebar-link">默认配置</a></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#chunks-字段" class="sidebar-link">chunks 字段</a></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#maxinitialrequests-字段" class="sidebar-link">maxInitialRequests 字段</a></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#maxasyncrequests-字段" class="sidebar-link">maxAsyncRequests 字段</a></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#minchunks-字段" class="sidebar-link">minChunks 字段</a></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#cachegroups-字段" class="sidebar-link">cacheGroups 字段</a></li></ul></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#路由懒加载和组件懒加载" class="sidebar-link">路由懒加载和组件懒加载</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#路由懒加载" class="sidebar-link">路由懒加载</a></li><li class="sidebar-sub-header"><a href="/L-Blog/more/Webpack代码分割和路由懒加载以及组件懒加载.html#组件懒加载" class="sidebar-link">组件懒加载</a></li></ul></li></ul></li><li><a href="/L-Blog/more/谈谈Webpack.html" class="sidebar-link">谈谈 Webpack</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack-代码分割-和-路由懒加载、组件懒加载"><a href="#webpack-代码分割-和-路由懒加载、组件懒加载" class="header-anchor">#</a> Webpack 代码分割 和 路由懒加载、组件懒加载</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>代码打包是我们平时项目必经的一步，为了减小打包体积，加快加载速度，代码分割是不可缺少的一部分，虽然现在的框架（例如 vue，react）都已经在内部将 webpack 配置好了，但是原理还是要知道的。</p> <img src="/L-Blog/assets/img/卷.b653b11c.jpg" style="display:block;margin:0 auto;"> <h2 id="代码分割的三种方式"><a href="#代码分割的三种方式" class="header-anchor">#</a> 代码分割的三种方式</h2> <ul><li>入口：使用 <code>entry</code> 配置手动地分离代码</li> <li>动态导入：通过 <code>import()</code> 来分离代码</li> <li>防止重复：使用 <code>splitChunks</code> 去重和分离 <code>chunk</code></li></ul> <p>本文着重记录第三种 <code>splitChunks</code> 的用法</p> <h2 id="splitchunks-代码拆分"><a href="#splitchunks-代码拆分" class="header-anchor">#</a> splitChunks 代码拆分</h2> <h3 id="默认配置"><a href="#默认配置" class="header-anchor">#</a> 默认配置</h3> <div class="language-json light extra-class"><pre class="language-json"><code>splitChunks<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 表示选择哪些 chunks 进行分割，可选值有：async，initial和all</span>
+    chunks<span class="token operator">:</span> <span class="token string">&quot;async&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">// 表示新分离出的chunk必须大于等于minSize，默认为30000，约30kb。</span>
+    minSize<span class="token operator">:</span> <span class="token number">30000</span><span class="token punctuation">,</span>
+    <span class="token comment">// 表示一个模块至少应被minChunks个chunk所包含才能分割。默认为1。</span>
+    minChunks<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token comment">// 表示按需加载文件时，并行请求的最大数目。默认为5。</span>
+    maxAsyncRequests<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token comment">// 表示加载入口文件时，并行请求的最大数目。默认为3。</span>
+    maxInitialRequests<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    <span class="token comment">// 表示拆分出的chunk的名称连接符。默认为~。如chunk~vendors.js</span>
+    automaticNameDelimiter<span class="token operator">:</span> '~'<span class="token punctuation">,</span>
+    <span class="token comment">// 设置chunk的文件名。默认为true。当为true时，splitChunks基于chunk和cacheGroups的key自动命名。</span>
+    name<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// cacheGroups 下可以可以配置多个组，每个组根据test设置条件，符合test条件的模块，就分配到该组。模块可以被多个组引用，但最终会根据priority来决定打包到哪个组中。默认将所有来自 node_modules目录的模块打包至vendors组，将两个以上的chunk所共享的模块打包至default组。</span>
+    cacheGroups<span class="token operator">:</span> <span class="token punctuation">{</span>
+        vendors<span class="token operator">:</span> <span class="token punctuation">{</span>
+            test<span class="token operator">:</span> /<span class="token punctuation">[</span>\\/<span class="token punctuation">]</span>node_modules<span class="token punctuation">[</span>\\/<span class="token punctuation">]</span>/<span class="token punctuation">,</span>
+            priority<span class="token operator">:</span> <span class="token number">-10</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        default<span class="token operator">:</span> <span class="token punctuation">{</span>
+            minChunks<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            priority<span class="token operator">:</span> <span class="token number">-20</span><span class="token punctuation">,</span>
+            reuseExistingChunk<span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="chunks-字段"><a href="#chunks-字段" class="header-anchor">#</a> <strong>chunks 字段</strong></h3> <p>可选值有 <code>async</code>、 <code>initial</code> 和 <code>all</code>，默认值是 <code>async</code>，作用范围如下：</p> <ul><li><code>async</code> 异步加载的 chunk</li> <li><code>initial</code> 非异步加载的初始 chunk</li> <li><code>all</code> 包括了<code>初始chunk</code> 和 <code>异步chunk</code></li></ul> <p>推荐使用 <strong><code>all</code></strong></p> <h3 id="maxinitialrequests-字段"><a href="#maxinitialrequests-字段" class="header-anchor">#</a> <strong>maxInitialRequests 字段</strong></h3> <p>maxInitialRequests 字段指 splitchunk 分割代码后请求的初始 chunk 最大数量</p> <p><strong>注意：这是一个约束，并不是约束项目线上时请求数量，而是约束在代码分割时，如果遍历到一个满足单独分包为初始 chunk 的文件，这时候已经单独分包为初始 chunk 的数量达到了 maxInitialRequests 设置的数量,则不能拆。</strong></p> <p>例如有一个 index.js (是入口文件)</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token string">'vue'</span>
+</code></pre></div><p>splitChunks 修改为:</p> <div class="language-js extra-class"><pre class="language-js"><code>chunks<span class="token operator">:</span> <span class="token string">'initial'</span><span class="token punctuation">,</span>
+maxInitialRequests<span class="token operator">:</span> <span class="token number">1</span>
+</code></pre></div><p>则最终 vue 不会被单独打包,因为 vue 是 index.js 的前置依赖,所以要在页面初始时请求,如果单独分包,那么初始化时的请求数变成了 2,不符合 maxInitialRequests 设置的为 1 的条件,所以 splitChunks 不会对 index.js 进行拆分。</p> <h3 id="maxasyncrequests-字段"><a href="#maxasyncrequests-字段" class="header-anchor">#</a> <strong>maxAsyncRequests 字段</strong></h3> <p>maxAsyncRequests 表示 splitChunks 在拆分 chunk 后，并行加载的异步 chunk 数不超过指定的值。</p> <p>例如 <code>import()</code> 就是异步加载</p> <h3 id="minchunks-字段"><a href="#minchunks-字段" class="header-anchor">#</a> <strong>minChunks 字段</strong></h3> <p>minChunks 表示一个模块至少应被指定个数的 chunk 所共享才能分割。默认为 1。</p> <h3 id="cachegroups-字段"><a href="#cachegroups-字段" class="header-anchor">#</a> <strong>cacheGroups 字段</strong></h3> <p>cacheGroups 是一个对象,内部每个字段也是对象,并且会继承 splitChunks 的属性,也可以重写覆盖继承来的属性值。还有一些属性只能在 cacheGroups 中使用：<code>test</code>、<code>priority</code> 、<code>reuseExistingChunk</code>。</p> <p>通过 cacheGroups，我们可以定义自定义 chunk 组，通过 test 条件对模块进行过滤，符合条件的模块分配到相同的组</p> <ul><li>test 条件匹配</li> <li>priority 被分配到多个不同组的时候根据优先级确定最终分配到哪个组</li> <li>name 重命名 chunk 名称</li> <li>reuseExistingChunk 如果当前的 chunk 匹配到已经分包的模块，是否重用这个模块</li></ul> <p>cacheGroups 的默认值:</p> <div class="language-json extra-class"><pre class="language-json"><code>cacheGroups<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 来自node_modules中的文件</span>
+        vendors<span class="token operator">:</span> <span class="token punctuation">{</span>
+          test<span class="token operator">:</span> /<span class="token punctuation">[</span>\\/<span class="token punctuation">]</span>node_modules<span class="token punctuation">[</span>\\/<span class="token punctuation">]</span>/<span class="token punctuation">,</span>
+          priority<span class="token operator">:</span> <span class="token number">-10</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 被两个及以上文件共享的文件</span>
+        default<span class="token operator">:</span> <span class="token punctuation">{</span>
+          minChunks<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          priority<span class="token operator">:</span> <span class="token number">-20</span><span class="token punctuation">,</span>
+          reuseExistingChunk<span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+</code></pre></div><p>再看这个例子:</p> <div class="language-json extra-class"><pre class="language-json"><code>cacheGroups<span class="token operator">:</span> <span class="token punctuation">{</span>
+  vendors<span class="token operator">:</span> <span class="token punctuation">{</span>
+    test<span class="token operator">:</span> /<span class="token punctuation">[</span>\\/<span class="token punctuation">]</span>node_modules<span class="token punctuation">[</span>\\/<span class="token punctuation">]</span>/<span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;customName&quot;</span><span class="token punctuation">,</span>
+    priority<span class="token operator">:</span> <span class="token number">-10</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  customGroup<span class="token operator">:</span> <span class="token punctuation">{</span>
+    test<span class="token operator">:</span> /<span class="token punctuation">[</span>\\/<span class="token punctuation">]</span>node_modules<span class="token punctuation">[</span>\\/<span class="token punctuation">]</span>/<span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;customName1&quot;</span><span class="token punctuation">,</span>
+    priority<span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>模块还可以分配到多个不同的组，但最终会根据 priority 优先级决定打包到哪个 chunk, name 用来重命名打包出来的 chunk 名字(默认是组的 key + '~' + 源 chunk 名组成),所以在这样的配置下, node_modules 中的文件会被打包到名为 customName1 的 chunk 中</p> <h2 id="路由懒加载和组件懒加载"><a href="#路由懒加载和组件懒加载" class="header-anchor">#</a> 路由懒加载和组件懒加载</h2> <p>当我们打开浏览器，访问网站时，此时默认是刚打开就去加载所有页面，路由懒加载就是只加载你当前点击的那个模块。 按需去加载路由对应的资源，提高首屏加载速度 , 实现方式则是使用异步加载的写法</p> <p>懒加载有两种方式:</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>1、vue 异步组件实现路由懒加载 <code>component：resolve=&gt;(['需要加载的路由的地址'，resolve])</code></p> <p>2、es 提出的 import(推荐使用这种方式) <code>const HelloWorld = （）=&gt;import('需要加载的模块地址')</code></p></div> <h3 id="路由懒加载"><a href="#路由懒加载" class="header-anchor">#</a> 路由懒加载</h3> <p>除了 import()的异步加载实现路由懒加载外,这里还有一个 webpackChunkName 魔法注释,按照这个格式书写,如果满足 splitchunks 的条件,单独打包出来的 login.vue 的 chunk 名将会变成 login</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  routes<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      path<span class="token operator">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackChunkName: &quot;login&quot; */</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">@/views/login.vue</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="组件懒加载"><a href="#组件懒加载" class="header-anchor">#</a> 组件懒加载</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;hello&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>One<span class="token operator">-</span>com<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>One<span class="token operator">-</span>com<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  components<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token string">&quot;One-com&quot;</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&quot;./one&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      msg<span class="token operator">:</span> <span class="token string">'Welcome to Your Vue.js App'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+</code></pre></div><p>本文参考:</p> <p><a href="https://juejin.cn/post/6985725946598785055" target="_blank" rel="noopener noreferrer">vue 路由懒加载及组件懒加载<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://juejin.cn/post/6844904103848443912" target="_blank" rel="noopener noreferrer">如何使用 splitChunks 精细控制代码分割<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/L-Blog/more/谈谈Babel.html" class="prev">
+        谈谈 Babel
+      </a></span> <span class="next"><a href="/L-Blog/more/谈谈Webpack.html">
+        谈谈 Webpack
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/L-Blog/assets/js/app.72121cfb.js" defer></script><script src="/L-Blog/assets/js/2.b76b99cb.js" defer></script><script src="/L-Blog/assets/js/8.1508f220.js" defer></script>
+  </body>
+</html>
