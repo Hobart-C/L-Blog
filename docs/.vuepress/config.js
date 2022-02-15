@@ -28,7 +28,7 @@ module.exports = {
           path: '/more/',
           collapsable: false,
           sidebarDepth: 3,
-          children: ['package.json的小知识', '谈谈Babel', '谈谈Webpack']
+          children: ['package.json的小知识', '谈谈Babel', 'Webpack代码分割和路由懒加载以及组件懒加载', '谈谈Webpack']
         }
       ]
     } // 侧边栏配置
